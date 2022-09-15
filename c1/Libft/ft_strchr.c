@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/15 11:38:42 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/15 11:42:28 by sersanch         ###   ########.fr       */
+/*   Created: 2022/09/15 12:52:28 by sersanch          #+#    #+#             */
+/*   Updated: 2022/09/15 13:32:13 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int c)
+char	*ft_strchr(const char *s, int c)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
+	int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] == (char)c + '0')
+			return (&s[i]);
+		i++;
+	}
+	if (s[i] == (char)c + '0')
+		return (&s[i]);
 	return (0);
 }
