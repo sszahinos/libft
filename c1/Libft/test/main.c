@@ -1,15 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/15 12:37:06 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/16 15:13:48 by sersanch         ###   ########.fr       */
+/*   Created: 2022/09/16 15:20:46 by sersanch          #+#    #+#             */
+/*   Updated: 2022/09/16 15:21:23 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-size_t	ft_strlcpy(char *dst, char *src, size_t size);
+int	main(void)
+{
+	
+	return (0);
+}

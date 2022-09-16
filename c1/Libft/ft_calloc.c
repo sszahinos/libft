@@ -6,7 +6,7 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 13:51:36 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/15 14:29:14 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/16 15:13:01 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*calloc(unsigned int count, unsigned int size)
 {
-	void 			*mem;
+	int				*mem;
 	unsigned int	i;
 
 	mem = malloc(size * count);
@@ -22,5 +22,5 @@ void	*calloc(unsigned int count, unsigned int size)
 		return (0);
 	while (i < count)
 		mem[i++] = 0;
-	return (mem);
+	return ((void *)mem);
 }

@@ -6,7 +6,7 @@
 #    By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/16 10:05:08 by sersanch          #+#    #+#              #
-#    Updated: 2022/09/16 11:49:52 by sersanch         ###   ########.fr        #
+#    Updated: 2022/09/16 14:04:24 by sersanch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,13 +44,14 @@ SRC_FILES :=	ft_isalpha.c \
 				ft_strdup.c
 
 ##### OBJECTS #####
-SRC_OBJS := $(SRC_FILES:.c=.o)
+SRC_OBJS = $(SRC_FILES:.c=.o)
 
 ##### RULES #####
 all: $(NAME)
 
 $(NAME): $(SRC_OBJS) Makefile $(HEADER)
 	$(CC) $(FLAGS) -I $(HEADER) -c $(NAME) -o $(SRC_OBJS)
+	$(AR) $(NAME) $(SRC_OBJS)
 
 clean:
 	$(RM) $(SRC_OBJS)

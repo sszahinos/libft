@@ -6,15 +6,18 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 15:27:18 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/14 17:05:42 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/16 14:51:30 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_bzero(void *s, unsigned int n)
 {
-	int	i;
+	int		i;
+	char	*sc;
 
+	sc = (char *)s;
 	i = 0;
 	while (i < n)
-		s[i++] = '\0';
+		sc[i++] = '\0';
+	s = (void *)sc;
 }

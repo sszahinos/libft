@@ -6,11 +6,8 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 12:16:40 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/15 12:18:44 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/16 15:01:22 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memmove(void *dst, const void *src, unsigned int n)
-{
-
-}
+void	*ft_memmove(void *dst, const void *src, unsigned int n);

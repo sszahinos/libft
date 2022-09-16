@@ -6,7 +6,7 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 14:35:20 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/15 14:37:22 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/16 14:50:17 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static int	check_end(int started, char c)
 	return (0);
 }
 
-int	ft_atoi(char *str) //OJO FUNCIONA IGUAL???????
+int	ft_atoi(char *str)
 {
 	int	i;
 	int	sign;

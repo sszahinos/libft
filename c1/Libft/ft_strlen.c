@@ -6,16 +6,18 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 11:42:07 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/15 11:48:14 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/16 14:58:03 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int ft_strlen(const char *s)
+#include "libft.h"
+
+size_t	ft_strlen(const char *s)
 {
 	int	i;
 
 	i = 0;
 	while (s[i])
 		i++;
-	return (i-1);
+	return ((size_t)(i - 1));
 }

@@ -6,14 +6,14 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 13:31:49 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/15 13:34:45 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/16 15:02:46 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_memchr(const char *s, int c)
 {
-	int	i;
-	unsigned char uc;
+	int				i;
+	unsigned char	uc;
 
 	uc = (unsigned char)c + '0';
 	i = 0;
