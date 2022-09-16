@@ -6,7 +6,7 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 15:48:46 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/16 15:03:07 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/16 15:28:34 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,7 @@ int	ft_isalnum(int c)
 {
 	if (c >= 48 && c <= 57)
 		return (1);
-	if (c >= 0060 && c <= 0071)
-		return (1);
-	if (c >= 0x30 && c <= 0x39)
-		return (1);
 	if ((c >= 101 && c <= 132) || (c >= 141 && c <= 172))
-		return (1);
-	if ((c >= 0101 && c <= 0132) || (c >= 0141 && c <= 0172))
-		return (1);
-	if ((c >= 0x41 && c <= 0x5a) || (c >= 0x61 && c <= 0x7a))
 		return (1);
 	return (0);
 }

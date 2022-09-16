@@ -6,11 +6,13 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 12:42:26 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/16 14:55:48 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/16 15:31:36 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+#include "libft.h"
+
+int	ft_strncmp(char *s1, char *s2, size_t n)
 {
 	unsigned int	i;
 	int				end;

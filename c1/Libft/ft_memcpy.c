@@ -6,11 +6,13 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 12:00:51 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/16 15:01:56 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/16 15:30:24 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memcpy(void *dst, const void *src, unsigned int n)
+#include "libft.h"
+
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	int		i;
 	char	*dstc;

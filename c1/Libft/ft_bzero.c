@@ -6,11 +6,13 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 15:27:18 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/16 14:51:30 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/16 15:28:02 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_bzero(void *s, unsigned int n)
+#include "libft.h"
+
+void	ft_bzero(void *s, size_t n)
 {
 	int		i;
 	char	*sc;

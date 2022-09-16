@@ -6,17 +6,13 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 15:46:31 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/16 15:03:00 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/16 15:28:57 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isdigit(int c)
 {
 	if (c >= 48 && c <= 57)
-		return (1);
-	if (c >= 0060 && c <= 0071)
-		return (1);
-	if (c >= 0x30 && c <= 0x39)
 		return (1);
 	return (0);
 }
