@@ -5,72 +5,64 @@
 #                                                     +:+ +:+         +:+      #
 #    By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/09/14 15:12:42 by sersanch          #+#    #+#              #
-#    Updated: 2022/09/15 11:34:02 by sersanch         ###   ########.fr        #
+#    Created: 2022/09/16 10:05:08 by sersanch          #+#    #+#              #
+#    Updated: 2022/09/16 11:49:52 by sersanch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 ##### VARIABLES #####
-NAME := libft.a
-CC := gcc
-CFLAGS := -Wall -Wextra -Werror
-LIB_DIR := ./Libft/
-LIB_NAME := ft
-LIB := $(LIB_DIR)lib$(LIB_NAME).a
-INCLUDE := -I ./Libft
-AR := ar
-ARFLAGS := rcs
-RM := rm -f
-CP := cp
+NAME = libft.a
+HEADER = libft.h
+CC = cc
+FLAGS = -Wall -Wextra -Werror -MMD
+NORMINETTE = norminette -R CheckForbiddenSourceHeader
+RM = rm -f
+AR = ar -rcs
 
-##### SRC #####
-SRC_DIR := ./src/
-SRC_FILE :=	ft_isalpha.c \
-			ft_isdigit.c \
-			ft_isascii.c \
-			ft_isalnum.c \
-			ft_isprint.c \
-			ft_strlen.c \
-			ft_memset.c \
-			ft_bzero.c \
-			ft_memcpy.c \
-			ft_memmove.c \
-			ft_strlcpy.c \
-			ft_strlcat.c \
-			ft_toupper.c \
-			ft_tolower.c \
-			ft_strchr.c \
-			ft_strrchr.c \
-			ft_strncmpt.c \
-			ft_memcmp.c \
-			ft_strnstr.c \
-			ft_atoi.c \
-			ft_calloc.c \
-			ft_strdup.c
+##### FILES #####
+SRC_FILES :=	ft_isalpha.c \
+				ft_isdigit.c \
+				ft_isascii.c \
+				ft_isalnum.c \
+				ft_isprint.c \
+				ft_strlen.c \
+				ft_memset.c \
+				ft_bzero.c \
+				ft_memcpy.c \
+				ft_memmove.c \
+				ft_strlcpy.c \
+				ft_strlcat.c \
+				ft_toupper.c \
+				ft_tolower.c \
+				ft_strchr.c \
+				ft_strrchr.c \
+				ft_strncmpt.c \
+				ft_memcmp.c \
+				ft_strnstr.c \
+				ft_atoi.c \
+				ft_calloc.c \
+				ft_strdup.c
 
-MAIN_SRCS := $(addprefix $(MAIN_SRC_DIR),$(MAIN_SRC_FILES))
-
-##### BONUS VARIABLES #####
-
-##### OBJ #####
-OBJ_DIR := ./obj/
-OBJ_FILE :=	$(SRC_FILE:.c=.o)
-#BONUS_OBJ_FILE := $(BONUS_SRC_FILE:.c=.o)
-
-OBJS := $(addprefix $(OBJ_DIR),$(OBJ_FILE))
-#BONUS_OBJS := $(addprefix $(OBJ_DIR),$(BONUS_OBJ_FILE))
+##### OBJECTS #####
+SRC_OBJS := $(SRC_FILES:.c=.o)
 
 ##### RULES #####
 all: $(NAME)
 
-re: fclean all
+$(NAME): $(SRC_OBJS) Makefile $(HEADER)
+	$(CC) $(FLAGS) -I $(HEADER) -c $(NAME) -o $(SRC_OBJS)
 
-clean: 
-	make -C $(LIB_DIR) clean
-	$(RM) $(OBJ) $(OBJ_BONUS)
+clean:
+	$(RM) $(SRC_OBJS)
 
 fclean: clean
-	make -C $(LIB_DIR) fclean
 	$(RM) $(NAME)
 
-.PHONY: all clean fclean re bonus
+re: fclean all
+
+#test:
+
+norm:
+	$(NORMINETTE)
+
+.PHONY: all, clean, fclean, re, test, norm
