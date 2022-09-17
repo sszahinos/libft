@@ -12,10 +12,10 @@
 
 #include <stdlib.h>
 
-void	*calloc(unsigned int count, unsigned int size)
+void	*calloc(size_t count, size_t size)
 {
-	int				*mem;
-	unsigned int	i;
+	int		*mem;
+	size_t	i;
 
 	mem = malloc(size * count);
 	if (!malloc)

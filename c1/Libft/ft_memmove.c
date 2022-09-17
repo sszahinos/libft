@@ -10,4 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memmove(void *dst, const void *src, unsigned int n);
+#include "libft.h"
+
+void	*ft_memmove(void *dst, const void *src, size_t n)
+{
+    int		i;
+	char 	*dstc;
+	char 	*srcc;
+
+	dstc = (char *)dst;
+	srcc = (char *)src;
+	i = 0;
+	while (i < n)
+	{
+		dstc[i] = srcc[i];
+		i++;
+	}
+	dst = (void *)dstc;
+	return (dst);
+}

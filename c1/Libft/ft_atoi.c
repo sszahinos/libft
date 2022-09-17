@@ -19,7 +19,9 @@ static int	is_num(char c)
 
 static int	check_char(char c)
 {
-	if (is_num(c) == 1 || c == '+' || c == '-' || c == ' ')
+	if (is_num(c) == 1 || c == '+' || c == '-')
+		return (1);
+	if (c == ' ' || c == '\t' || c == '\n')
 		return (1);
 	return (0);
 }
@@ -41,7 +43,7 @@ static int	check_end(int started, char c)
 	return (0);
 }
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int	i;
 	int	sign;
