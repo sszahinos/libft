@@ -26,7 +26,7 @@ static int	check_char(char c)
 	return (0);
 }
 
-static void	reset_var(int *sign, int *num, int *end, int *started)
+static void	reset_var(int *sign, long int *num, int *end, int *started)
 {
 	*sign = 1;
 	*num = 0;
@@ -45,11 +45,11 @@ static int	check_end(int started, char c)
 
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	sign;
-	int	num;
-	int	end;
-	int	started;
+	int			i;
+	int			sign;
+	long int	num;
+	int			end;
+	int			started;
 
 	i = 0;
 	reset_var(&sign, &num, &end, &started);
@@ -63,9 +63,11 @@ int	ft_atoi(const char *str)
 		}
 		else if (str[i] == '-' && started == 0)
 			sign *= -1;
-		end = check_end(started, str[i]);
-		i++;
+		end = check_end(started, str[i++]);
 	}
 	num *= sign;
-	return (num);
+	if (num >= -2147483648 && num <= 2147483647)
+		return ((int)num);
+	else
+		return (0);
 }
