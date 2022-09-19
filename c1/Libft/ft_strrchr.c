@@ -6,7 +6,7 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 12:50:40 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/16 14:55:06 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/19 14:36:05 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ char	*ft_strrchr(const char *s, int c)
 		i++;
 	while (i >= 0)
 	{
-		if (s[i] == (char)c + '0')
-			return (&s[i]);
+		if (s[i] == c)
+			return (s + i);
 		i--;
 	}
 	return (0);

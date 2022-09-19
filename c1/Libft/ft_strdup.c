@@ -6,29 +6,21 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 14:29:25 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/16 14:59:46 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/19 14:00:39 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h" 
 
 char	*ft_strdup(const char *s1)
 {
-	int		i;
 	char	*strcp;
+	int		size;
 
-	i = 0;
-	while (s1[i])
-		i++;
-	strcp = malloc(sizeof(char) * i);
+	size = ft_strlen(s1);
+	strcp = malloc(sizeof(char) * (size + 1));
 	if (!strcp)
 		return (0);
-	i = 0;
-	while (s1[i])
-	{
-		strcp[i] = s1[i];
-		i++;
-	}
-	strcp[i] = s1[i];
+	strcp = (char *)ft_memcpy(strcp, s1, size + 1);
 	return (strcp);
 }

@@ -6,11 +6,13 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 14:39:35 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/16 14:55:22 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/19 13:51:10 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_tolower(int c)
 {
-	return (c + 32);
+	if (c >= 65 && c <= 90)
+		return (c + 32);
+	return (c);
 }

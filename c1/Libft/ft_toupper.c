@@ -6,11 +6,13 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 14:41:09 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/16 14:54:24 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/19 13:50:20 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_toupper(int c)
 {
-	return (c - 32);
+	if (c >= 97 && c <= 122)
+		return (c - 32);
+	return (c);
 }
