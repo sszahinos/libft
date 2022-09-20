@@ -6,7 +6,7 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 15:20:46 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/20 09:29:19 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/20 10:53:13 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,26 @@
 #include <stdlib.h>
 #include "../libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_memchr(const char *s, int c)
 {
-	int	i;
+	int				i;
+	unsigned char	uc;
 
+	uc = (unsigned char)c;
 	i = 0;
 	while (s[i])
 	{
-		if (s[i] == c)
+		if (s[i] == uc)
 			return ((char *)s + i);
 		i++;
 	}
-	if (s[i] == c)
+	if (s[i] == uc)
 		return ((char *)s + i);
 	return (0);
 }
 
 int	main(void)
 {
-	printf("%p", ft_strchr("teste",'e'));
+	printf("%s", ft_memchr("test", 101));
 	return (0);
 }
