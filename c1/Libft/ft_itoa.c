@@ -6,7 +6,7 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 21:53:46 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/20 11:49:27 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/20 15:09:03 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	get_len(int n)
 		sign = 1;
 	}
 	else if (n == 0)
-		return (2);
+		return (1);
 	while (n > 0)
 	{
 		n /= 10;
@@ -42,6 +42,7 @@ char	*ft_itoa(int n)
 	num = malloc(sizeof(char) * (get_len(n) + 1));
 	if (!num)
 		return (0);
+	num[i + 1] = '\0';
 	if (n < 0)
 	{
 		n *= -1;
