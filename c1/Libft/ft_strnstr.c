@@ -6,7 +6,7 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 12:44:09 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/16 15:32:16 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/20 08:51:17 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,20 @@
 
 char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 {
-	size_t			i;
+	unsigned int	i;
 	int				j;
 	char			*pnt_first;
+	char			*str_arr;
 
+	str_arr = (char *)str;
 	if (to_find[0] == '\0')
-		return (str);
+		return (str_arr);
 	i = 0;
-	while (str[i] && i < len)
+	while (str[i] && i < (unsigned int)len)
 	{
 		j = 0;
-		pnt_first = &str[i];
-		while (str[i + j] == to_find[j])
+		pnt_first = &str_arr[i];
+		while (str[i + j] == to_find[j] && i + j < (unsigned int)len)
 		{
 			if (to_find[j + 1] == '\0')
 				return (pnt_first);

@@ -6,49 +6,66 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 14:35:20 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/19 15:55:32 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/20 09:17:59 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void var_initializer(int *sign, int *num, int *i, int *started)
+static int	is_space(char c)
 {
-	*sign = 1;
-	*num = 0;
-	*i = 0;
-	*started = 0;
+	if (c == ' ' || c == '\t' || c == '\n' || c == '\r')
+		return (1);
+	if (c == '\f' || c == '\v')
+		return (1);
+	return (0);
 }
 
-static int is_num(char c)
+static int	is_num(char c)
 {
 	if (c >= '0' && c <= '9')
 		return (1);
 	return (0);
 }
 
-int ft_atoi(const char *str)
+static int	is_valid(char c)
 {
-	int i;
-	int num;
-	int sign;
-	int started;
+	if (is_num(c) == 1 || c == '+' || c == '-')
+		return (1);
+	return (0);
+}
 
-	var_initializer(&sign, &num, &i, &started);
-	while (str[i] && started == 0 && is_num(str[i]) == 0)
-	{
-		if (str[i] == '-')
-		{
-			if (sign == -1)
-				return (num);
-			sign = -1;
-		}
-		i++;
-	}
+static int	get_int(const char *str, int i, int sign)
+{
+	int	num;
+
+	num = 0;
 	while (is_num(str[i]) == 1)
 	{
 		num = (num * 10) + (str[i] - 48);
 		i++;
 	}
 	return (num * sign);
+}
+
+int	ft_atoi(const char *str)
+{
+	int	i;
+	int sign;
+
+	sign = 1;
+	i = 0;
+	while (is_space(str[i]) == 1)
+		i++;
+	if (is_valid(str[i]) == 1)
+	{
+		if (str[i] == '-')
+			sign = -1;
+		if (str[i] == '-' || str[i] == '+')
+			i++;
+	}
+	if (is_num(str[i] == 0))
+		return (0);
+	else
+		return (get_int(str, i, sign));
 }
