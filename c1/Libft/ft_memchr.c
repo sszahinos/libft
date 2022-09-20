@@ -5,25 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/15 13:31:49 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/20 10:51:56 by sersanch         ###   ########.fr       */
+/*   Created: 2022/09/20 10:57:47 by sersanch          #+#    #+#             */
+/*   Updated: 2022/09/20 11:28:49 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_memchr(const char *s, int c)
+#include "libft.h"
+
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	int				i;
+	size_t			i;
 	unsigned char	uc;
+	unsigned char	*sc;
 
 	uc = (unsigned char)c;
+	sc = (char *)s;
 	i = 0;
-	while (s[i])
+	while (i < n)
 	{
-		if (s[i] == uc)
-			return ((char *)s + i);
+		if (sc[i] == uc)
+			return ((void *)s + i);
 		i++;
 	}
-	if (s[i] == uc)
-		return ((char *)s + i);
+	if (sc[i] == uc && i < n)
+		return ((void *)s + i);
 	return (0);
 }
