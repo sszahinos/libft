@@ -6,18 +6,22 @@
 #    By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/16 10:05:08 by sersanch          #+#    #+#              #
-#    Updated: 2022/09/16 14:04:24 by sersanch         ###   ########.fr        #
+#    Updated: 2022/09/19 14:37:35 by sersanch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 ##### VARIABLES #####
 NAME = libft.a
 HEADER = libft.h
+SRC_DIR = src
+OBJ_DIR = obj
 CC = cc
 FLAGS = -Wall -Wextra -Werror -MMD
 NORMINETTE = norminette -R CheckForbiddenSourceHeader
 RM = rm -f
 AR = ar -rcs
+MKDIR = mkdir -p
+MV = mv -f
 
 ##### FILES #####
 SRC_FILES :=	ft_isalpha.c \
@@ -36,21 +40,27 @@ SRC_FILES :=	ft_isalpha.c \
 				ft_tolower.c \
 				ft_strchr.c \
 				ft_strrchr.c \
-				ft_strncmpt.c \
+				ft_strncmp.c \
 				ft_memcmp.c \
 				ft_strnstr.c \
 				ft_atoi.c \
 				ft_calloc.c \
-				ft_strdup.c
+				ft_strdup.c \
+				ft_memchr.c
 
 ##### OBJECTS #####
 SRC_OBJS = $(SRC_FILES:.c=.o)
 
+##### DEPENDENCIES #####
+SRC_DEPS = $(SRC_FILES:c=.d)
+
 ##### RULES #####
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
 all: $(NAME)
 
-$(NAME): $(SRC_OBJS) Makefile $(HEADER)
-	$(CC) $(FLAGS) -I $(HEADER) -c $(NAME) -o $(SRC_OBJS)
+$(NAME): $(SRC_OBJS) Makefile $(HEADER)	
 	$(AR) $(NAME) $(SRC_OBJS)
 
 clean:
@@ -65,5 +75,7 @@ re: fclean all
 
 norm:
 	$(NORMINETTE)
+push:
+	git add ft_*.c && git commit -m "Functions updated" && git push
 
 .PHONY: all, clean, fclean, re, test, norm

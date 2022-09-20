@@ -6,7 +6,7 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 18:00:09 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/17 18:00:09 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/19 10:36:14 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	int		i;
 	int		len;
-	char 	*s2;
-	
+	char	*s2;
+
 	len = ft_strlen(s);
 	s2 = malloc(sizeof(char) * (len + 1));
 	if (!s2)

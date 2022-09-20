@@ -1,3 +1,5 @@
 *.o
 *.swp
 #test_*
+.DS_Store
+.vscode*
