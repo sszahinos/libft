@@ -12,22 +12,30 @@
 
 #include "libft.h"
 
-static void	var_initializer(int *sign, int *num, int *i)
+static void var_initializer(int *sign, int *num, int *i, int *started)
 {
 	*sign = 1;
 	*num = 0;
 	*i = 0;
+	*started = 0;
 }
 
-int	ft_atoi(const char *str)
+static int is_num(char c)
 {
-	int	i;
-	int	num;
-	int	sign;
-	int	started;
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
+}
 
-	var_initializer(&sign, &num, &i, started);
-	while (str[i] && started == 0 && ft_isdigit(str[i]) == 0)
+int ft_atoi(const char *str)
+{
+	int i;
+	int num;
+	int sign;
+	int started;
+
+	var_initializer(&sign, &num, &i, &started);
+	while (str[i] && started == 0 && is_num(str[i]) == 0)
 	{
 		if (str[i] == '-')
 		{
@@ -37,7 +45,7 @@ int	ft_atoi(const char *str)
 		}
 		i++;
 	}
-	while (ft_isdigit(str[i]) == 1)
+	while (is_num(str[i]) == 1)
 	{
 		num = (num * 10) + (str[i] - 48);
 		i++;
