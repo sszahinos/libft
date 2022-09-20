@@ -6,7 +6,7 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 19:24:23 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/20 13:13:52 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/20 15:00:21 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int	count_digits(int n)
 {
 	int	i;
-	
+
 	i = 0;
 	while (n > 0)
 	{
@@ -29,21 +29,38 @@ static int	pow(int base, int power)
 {
 	int	i;
 	int	result;
-	
+
 	if (power == 0)
 		return (1);
 	i = 1;
-    result = base;
-    while (i++ < power)
-        result *= base;
+	result = base;
+	while (i++ < power)
+		result *= base;
 	return (result);
+}
+
+int	print_max(int n, int fd)
+{
+	if (n == -2147483648)
+	{
+		ft_putstr_fd("-2147483648", fd);
+		return (1);
+	}
+	else if (n == 2147483647)
+	{
+		ft_putstr_fd("2147483647", fd);
+		return (1);
+	}
+	return (0);
 }
 
 void	ft_putnbr_fd(int n, int fd)
 {
 	int	i;
-	int digits;
-	
+	int	digits;
+
+	if (print_max(n, fd) == 1)
+		return ;
 	if (n < 0)
 	{
 		ft_putchar_fd('-', fd);
@@ -51,14 +68,13 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	if (n == 0)
 		ft_putchar_fd('0', fd);
-	if 
-	else if (n <
+	else
 	{
 		digits = count_digits(n) - 1;
 		i = 0;
 		while (i < digits)
 		{
-			ft_putchar_fd((n / pow(10, digits--)) + 48, fd);
+			ft_putchar_fd((char)((n / pow(10, digits--) % 10) + 48), fd);
 		}
 		ft_putchar_fd((n % 10) + 48, fd);
 	}
