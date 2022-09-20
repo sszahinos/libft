@@ -6,7 +6,7 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 21:53:46 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/20 09:48:28 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/20 11:49:27 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,8 @@ char	*ft_itoa(int n)
 {
 	char	*num;
 	int		i;
-
 	i = get_len(n) - 1;
-	num = ft_calloc(sizeof(char), get_len(n) + 1);
+	num = malloc(sizeof(char) * (get_len(n) + 1));
 	if (!num)
 		return (0);
 	if (n < 0)

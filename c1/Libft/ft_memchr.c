@@ -6,7 +6,7 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 10:57:47 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/20 11:28:49 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/20 11:35:28 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	unsigned char	*sc;
 
 	uc = (unsigned char)c;
-	sc = (char *)s;
+	sc = (unsigned char *)s;
 	i = 0;
 	while (i < n)
 	{

@@ -6,7 +6,7 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 13:51:36 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/19 13:44:49 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/20 11:34:17 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	*ft_calloc(size_t count, size_t size)
 	mem = malloc(size * count);
 	if (!mem)
 		return (0);
+	i = 0;
 	while (i < count)
 		mem[i++] = '\0';
 	return ((void *)mem);
