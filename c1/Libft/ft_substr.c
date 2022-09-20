@@ -6,7 +6,10 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 17:52:34 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/17 17:52:34 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/20 09:46:47 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+char	*ft_substr(char const *s, unsigned int start, size_t len);

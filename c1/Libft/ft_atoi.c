@@ -6,7 +6,7 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 14:35:20 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/20 09:17:59 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/20 09:32:56 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static int	get_int(const char *str, int i, int sign)
 int	ft_atoi(const char *str)
 {
 	int	i;
-	int sign;
+	int	sign;
 
 	sign = 1;
 	i = 0;

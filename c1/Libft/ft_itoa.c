@@ -6,7 +6,7 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 21:53:46 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/19 21:53:46 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/20 09:48:28 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int	get_len(int n)
 {
 	int	i;
-	int sign;
+	int	sign;
 
 	i = 0;
 	sign = 0;
@@ -34,28 +34,28 @@ static int	get_len(int n)
 	return (i + sign);
 }
 
-char	*ft_itoa(int value)
+char	*ft_itoa(int n)
 {
 	char	*num;
 	int		i;
 
-	i = get_len(value) - 1;
-	num = ft_calloc(sizeof(char), get_len(value) + 1);
+	i = get_len(n) - 1;
+	num = ft_calloc(sizeof(char), get_len(n) + 1);
 	if (!num)
 		return (0);
-	if (value < 0)
+	if (n < 0)
 	{
-		value *= -1;
+		n *= -1;
 		num[0] = '-';
 	}
-	else if (value == 0)
+	else if (n == 0)
 	{
 		num[0] = '0';
 	}
-	while (value > 0)
+	while (n > 0)
 	{
-		num[i--] = (char)(value % 10) + 48;
-		value /= 10;
+		num[i--] = (char)(n % 10) + 48;
+		n /= 10;
 	}
 	return (num);
 }
