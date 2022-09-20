@@ -6,7 +6,7 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 19:24:23 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/20 12:17:25 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/20 12:21:53 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	ft_putnbr_fd(int n, int fd)
 		i = 0;
 		while (i < digits)
 		{
-			ft_putchar_fd(n / (10 * ), fd);
+			ft_putchar_fd(n / pow(), fd);
 		}
 	}
 
