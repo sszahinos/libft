@@ -6,13 +6,13 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 21:53:46 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/20 16:43:53 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/21 09:48:33 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	get_len(int n)
+static int	get_len(long long int n)
 {
 	int	i;
 	int	sign;
