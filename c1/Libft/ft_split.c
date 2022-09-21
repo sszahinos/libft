@@ -6,7 +6,7 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 09:47:34 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/21 18:12:28 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/21 18:39:04 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ static int	count_words(char const *s, unsigned char c)
 		}
 		i++;
 	}
+	if (normal_found == 1)
+		count++;
 	return (count);
 }
 
