@@ -15,6 +15,7 @@ NAME = libft.a
 HEADER = libft.h
 SRC_DIR = src
 OBJ_DIR = obj
+
 CC = cc
 FLAGS = -Wall -Wextra -Werror -MMD
 NORMINETTE = norminette -R CheckForbiddenSourceHeader
@@ -29,7 +30,7 @@ BOLD := \e[1m
 GREEN := \e[32m
 YELLOW := \e[33m
 CYAN := \e[36m
-
+LMAGENTA := \e[95m
 
 ##### FILES #####
 SRC_FILES :=	ft_isalpha.c \
@@ -86,8 +87,6 @@ BONUS_OBJS = $(BONUS_FILES:.c=.o)
 SRC_DEPS = $(SRC_FILES:c=.d)
 
 ##### RULES #####
-#@echo "--- COMPILATION ---"
-
 all: $(NAME)
 
 %.o: %.c
