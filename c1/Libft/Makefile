@@ -15,6 +15,7 @@ NAME = libft.a
 HEADER = libft.h
 SRC_DIR = src
 OBJ_DIR = obj
+BONUS_DIR = bonus
 
 CC = cc
 FLAGS = -Wall -Wextra -Werror -MMD
@@ -31,6 +32,7 @@ GREEN := \e[32m
 YELLOW := \e[33m
 CYAN := \e[36m
 LMAGENTA := \e[95m
+
 
 ##### FILES #####
 SRC_FILES :=	ft_isalpha.c \
@@ -89,30 +91,36 @@ SRC_DEPS = $(SRC_FILES:c=.d)
 ##### RULES #####
 all: $(NAME)
 
-%.o: %.c
+$(SRC_DIR)/$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@$(CC) $(CFLAGS) -c $< -o $@
 	@echo "$(CYAN)$< $(GREEN)✓$(RESET)"
 
 $(NAME): $(SRC_OBJS) Makefile $(HEADER)
 	@$(AR) $(NAME) $(SRC_OBJS)
-	@echo "$(BOLD)$(GREEN)Compilated succesfully!$(RESET)"
+	@echo "$(BOLD)$(LMAGENTA)SRC $(GREEN)compilated succesfully!$(RESET)"
 
 clean:
 	@$(RM) $(SRC_OBJS)
 	@echo "$(YELLOW)Objects deleted.$(RESET)"
 
 fclean: clean
-	@$(RM) $(NAME)
+	@$(RM) $(NAME) bonus.a
 	@echo "$(CYAN)$(NAME) $(YELLOW)deleted.$(RESET)"
 
 re: fclean all
 
-bonus: $(BONUS_OBJS) Makefile $(HEADER)
-	$(AR) $(NAME) $(BONUS_OBJS) $(SRC_OBJS)
+#bonus: $(BONUS_OBJS) Makefile $(HEADER) all
+#	@$(AR) bonus.a $(BONUS_OBJS)
+#	@echo "$(BOLD)$(LMAGENTA)BONUS $(GREEN)compilated succesfully!$(RESET)"
 
 norm:
 	$(NORMINETTE)
 push:
 	git add ft_*.c && git commit -m "Functions updated" && git push
 
-.PHONY: all, clean, fclean, re, norm, bonus
+folders:
+	@$(MKDIR) ./$(SRC_DIR)/$(OBJ_DIR)
+	@$(MV) *.c ./$(SRC_DIR)
+	@$(MV) *.o ./$(SRC_DIR)/$(OBJ_DIR)
+
+.PHONY: all, clean, fclean, re, norm, bonus, folders
