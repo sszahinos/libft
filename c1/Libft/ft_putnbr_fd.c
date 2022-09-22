@@ -25,7 +25,7 @@ static int	count_digits(int n)
 	return (i);
 }
 
-static int	pow(int base, int power)
+static int	ft_pow(int base, int power)
 {
 	int	i;
 	int	result;
@@ -74,7 +74,7 @@ void	ft_putnbr_fd(int n, int fd)
 		i = 0;
 		while (i < digits)
 		{
-			ft_putchar_fd((char)((n / pow(10, digits--) % 10) + 48), fd);
+			ft_putchar_fd((char)((n / ft_pow(10, digits--) % 10) + 48), fd);
 		}
 		ft_putchar_fd((n % 10) + 48, fd);
 	}
