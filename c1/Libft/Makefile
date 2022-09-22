@@ -6,7 +6,7 @@
 #    By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/16 10:05:08 by sersanch          #+#    #+#              #
-#    Updated: 2022/09/20 10:54:00 by sersanch         ###   ########.fr        #
+#    Updated: 2022/09/22 12:43:36 by sersanch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,14 @@ RM = rm -f
 AR = ar -rcs
 MKDIR = mkdir -p
 MV = mv -f
+
+#### FORMAT #####
+RESET := \e[0m
+BOLD := \e[1m
+GREEN := \e[32m
+YELLOW := \e[33m
+CYAN := \e[36m
+
 
 ##### FILES #####
 SRC_FILES :=	ft_isalpha.c \
@@ -59,34 +67,53 @@ SRC_FILES :=	ft_isalpha.c \
 				ft_putendl_fd.c \
 				ft_putnbr_fd.c
 
+BONUS_FILES :=	ft_lstnew.c \
+				ft_lstadd_front.c \
+				ft_lstsize.c \
+				ft_lstlast.c \
+				ft_lstadd_back.c \
+				ft_lstdelone.c \
+				ft_lstclear.c \
+				ft_lstiter.c \
+				ft_lstmap.c
+
+
 ##### OBJECTS #####
 SRC_OBJS = $(SRC_FILES:.c=.o)
+BONUS_OBJS = $(BONUS_FILES:.c=.o)
 
 ##### DEPENDENCIES #####
 SRC_DEPS = $(SRC_FILES:c=.d)
 
 ##### RULES #####
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+#@echo "--- COMPILATION ---"
 
 all: $(NAME)
 
-$(NAME): $(SRC_OBJS) Makefile $(HEADER)	
-	$(AR) $(NAME) $(SRC_OBJS)
+%.o: %.c
+	@$(CC) $(CFLAGS) -c $< -o $@
+	@echo "$(CYAN)$< $(GREEN)✓$(RESET)"
+
+$(NAME): $(SRC_OBJS) Makefile $(HEADER)
+	@$(AR) $(NAME) $(SRC_OBJS)
+	@echo "$(BOLD)$(GREEN)Compilated succesfully!$(RESET)"
 
 clean:
-	$(RM) $(SRC_OBJS)
+	@$(RM) $(SRC_OBJS)
+	@echo "$(YELLOW)Objects deleted.$(RESET)"
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
+	@echo "$(CYAN)$(NAME) $(YELLOW)deleted.$(RESET)"
 
 re: fclean all
 
-#test:
+bonus: $(BONUS_OBJS) Makefile $(HEADER)
+	$(AR) $(NAME) $(BONUS_OBJS) $(SRC_OBJS)
 
 norm:
 	$(NORMINETTE)
 push:
 	git add ft_*.c && git commit -m "Functions updated" && git push
 
-.PHONY: all, clean, fclean, re, test, norm
+.PHONY: all, clean, fclean, re, norm, bonus
