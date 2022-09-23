@@ -102,8 +102,8 @@ $(NAME): $(SRC_OBJS) Makefile $(HEADER)
 	@$(AR) $(NAME) $(SRC_OBJS)
 	@echo "$(BOLD)$(LMAGENTA)SRC $(GREEN)compilated succesfully!$(RESET)"
 
-bonus: $(BONUS_OBJS) Makefile $(HEADER)
-	$(AR) $(NAME) $(BONUS_OBJS)
+bonus: $(SRC_OBJS) $(BONUS_OBJS) Makefile $(HEADER)
+	$(AR) $(NAME) $(SRC_OBJS) $(BONUS_OBJS)
 	@echo "$(BOLD)$(LMAGENTA)BONUS $(GREEN)compilated succesfully!$(RESET)"
 
 clean:
