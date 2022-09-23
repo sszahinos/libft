@@ -91,13 +91,20 @@ SRC_DEPS = $(SRC_FILES:c=.d)
 ##### RULES #####
 all: $(NAME)
 
-$(SRC_DIR)/$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-	@$(CC) $(CFLAGS) -c $< -o $@
+#$(SRC_DIR)/$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+#	@$(CC) $(CFLAGS) -c $< -o $@
+#	@echo "$(CYAN)$< $(GREEN)✓$(RESET)"
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 	@echo "$(CYAN)$< $(GREEN)✓$(RESET)"
 
 $(NAME): $(SRC_OBJS) Makefile $(HEADER)
 	@$(AR) $(NAME) $(SRC_OBJS)
 	@echo "$(BOLD)$(LMAGENTA)SRC $(GREEN)compilated succesfully!$(RESET)"
+
+bonus: $(BONUS_OBJS) Makefile $(HEADER)
+	$(AR) $(NAME) $(BONUS_OBJS)
+	@echo "$(BOLD)$(LMAGENTA)BONUS $(GREEN)compilated succesfully!$(RESET)"
 
 clean:
 	@$(RM) $(SRC_OBJS)
@@ -108,10 +115,6 @@ fclean: clean
 	@echo "$(CYAN)$(NAME) $(YELLOW)deleted.$(RESET)"
 
 re: fclean all
-
-#bonus: $(BONUS_OBJS) Makefile $(HEADER) all
-#	@$(AR) bonus.a $(BONUS_OBJS)
-#	@echo "$(BOLD)$(LMAGENTA)BONUS $(GREEN)compilated succesfully!$(RESET)"
 
 norm:
 	$(NORMINETTE)
