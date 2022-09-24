@@ -6,7 +6,7 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 12:00:51 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/19 13:47:11 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/24 11:46:19 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	char	*dstc;
 	char	*srcc;
 
-	if (!dst || !src)
-		return (dst);
+	if (!dst && !src && n > 0)
+		return (0);
 	dstc = (char *)dst;
 	srcc = (char *)src;
 	i = 0;
