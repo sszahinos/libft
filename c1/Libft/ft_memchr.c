@@ -6,7 +6,7 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 10:57:47 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/24 12:02:05 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/24 16:12:13 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,8 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (i < n)
 	{
 		if (sc[i] == uc)
-			return ((void *)s + i);
+			return (&s[i]);
 		i++;
 	}
-	if (sc[i] == uc && i < n)
-		return ((void *)s + i);
 	return (0);
 }
