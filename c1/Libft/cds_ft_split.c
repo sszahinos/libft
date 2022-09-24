@@ -1,28 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/16 15:20:46 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/24 16:25:24 by sersanch         ###   ########.fr       */
+/*   Created: 2022/09/20 09:47:34 by sersanch          #+#    #+#             */
+/*   Updated: 2022/09/24 16:28:54 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-
-size_t	ft_strlen(const char *s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return ((size_t)i);
-}
+#include "libft.h"
 
 static int	count_words(char const *s, unsigned char c)
 {
@@ -117,16 +105,6 @@ char	**ft_split(char const *s, char c)
 		words[j] = get_word(s, start, i);
 		j++;
 	}
-	words[j] = NULL;
+	words[j] = 0;
 	return (words);
-}
-
-int main(void)
-{
-	char	**str2;	
-	str2 = ft_split("hello!zzzzzzzz", 'z');
-	printf("%s", (char *)str2[0]);
-	printf("%s", (char *)str2[1]);
-	//printf("%s", (char *)str2[2]);
-	return (0);
 }
