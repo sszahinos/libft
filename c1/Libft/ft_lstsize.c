@@ -6,12 +6,12 @@
 /*   By: sersanch <sersanch@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 10:29:25 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/24 14:41:51 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/24 15:04:11 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+
 int	ft_lstsize(t_list *lst)
 {
 	int		count;
