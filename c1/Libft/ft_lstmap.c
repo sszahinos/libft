@@ -6,7 +6,7 @@
 /*   By: sersanch <sersanch@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 10:29:10 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/24 15:36:17 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/24 16:56:23 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*new_node;
 	t_list	*new_list;
 
-	new_list = 0;
 	if (!lst || !f)
 		return (0);
+	new_list = 0;
 	while (lst)
 	{
 		new_node = ft_lstnew(f(lst->content));
