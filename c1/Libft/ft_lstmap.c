@@ -6,19 +6,19 @@
 /*   By: sersanch <sersanch@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 10:29:10 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/24 10:50:46 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/24 15:36:17 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-/*{
-	t_list	new_node;
-	t_list	new_list;
-	
-	new_list = NULL;
-	if (!lst)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+{
+	t_list	*new_node;
+	t_list	*new_list;
+
+	new_list = 0;
+	if (!lst || !f)
 		return (0);
 	while (lst)
 	{
@@ -32,4 +32,4 @@ t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 		lst = lst->next;
 	}
 	return (new_list);
-}*/
+}

@@ -6,13 +6,13 @@
 /*   By: sersanch <sersanch@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 10:27:28 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/24 10:48:39 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/24 15:34:40 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*aux;
 	t_list	*aux_next;

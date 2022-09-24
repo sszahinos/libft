@@ -6,7 +6,7 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 09:46:57 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/20 17:31:54 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/24 15:37:21 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	new_word = malloc(sizeof(char) * (lens1 + lens2 + 1));
 	if (!new_word)
 		return (0);
-	i = 0;
-	while (s1[i])
-	{
+	i = -1;
+	while (s1[++i])
 		new_word[i] = s1[i];
-		i++;
-	}
 	j = 0;
 	while (s2[j])
 	{

@@ -6,7 +6,7 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 09:47:34 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/24 14:21:20 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/24 16:28:54 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,16 @@ static char	*get_word(char const *str, int start, int end)
 	return (word);
 }
 
+void	clear_words(char **words)
+{
+	int	i;
+
+	i = 0;
+	while (words[i])
+		free(words[i++]);
+	free(words);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	int		i;
@@ -82,7 +92,10 @@ char	**ft_split(char const *s, char c)
 			normal_found = 0;
 			words[j] = get_word(s, start, i);
 			if (!words[j])
+			{
+				clear_words(words);
 				return (0);
+			}
 			j++;
 		}
 		i++;
@@ -92,6 +105,6 @@ char	**ft_split(char const *s, char c)
 		words[j] = get_word(s, start, i);
 		j++;
 	}
-	words[j] = NULL;
+	words[j] = 0;
 	return (words);
 }
