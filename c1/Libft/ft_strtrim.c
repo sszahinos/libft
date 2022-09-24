@@ -6,7 +6,7 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 17:52:10 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/24 10:36:05 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/24 15:51:27 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,38 +25,43 @@ static int	is_set(char c, char const *set)
 	return (0);
 }
 
+static char	*get_mem(int *st_end, int len)
+{
+	char	*new_str;
+
+	new_str = 0;
+	if (st_end[0] == len && st_end[1] == len)
+		new_str = malloc(sizeof(char));
+	else
+		new_str = malloc(sizeof(char) * (len - (st_end[0] + st_end[1]) + 1));
+	if (!new_str)
+		return (0);
+	return (new_str);
+}	
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		i;
 	int		len;
-	int		start_end[2];
+	int		st_end[2];
 	char	*new_str;
 
-	start_end[0] = 0;
-	start_end[1] = 0;
+	st_end[0] = 0;
+	st_end[1] = 0;
 	len = ft_strlen(s1);
-	i = 0;
-	while (s1[i] && is_set(s1[i], set) == 1)
-	{
-		start_end[0]++;
-		i++;
-	}
-	i = len - 1;
-	while (i >= 0 && is_set(s1[i], set) == 1)
-	{
-		start_end[1]++;
-		i--;
-	}
-	if (start_end[0] == len && start_end[1] == len)
-		new_str = malloc(sizeof(char));
-	else
-		new_str = malloc(sizeof(char) * (len - (start_end[0] + start_end[1]) + 1));
+	i = -1;
+	while (s1[++i] && is_set(s1[i], set) == 1)
+		st_end[0]++;
+	i = len - 1 + 1;
+	while (--i >= 0 && is_set(s1[i], set) == 1)
+		st_end[1]++;
+	new_str = get_mem(st_end, len);
 	if (!new_str)
 		return (0);
 	i = 0;
-	while (i + start_end[0] < len - start_end[1])
+	while (i + st_end[0] < len - st_end[1])
 	{
-		new_str[i] = s1[i + start_end[0]];
+		new_str[i] = s1[i + st_end[0]];
 		i++;
 	}
 	new_str[i] = '\0';
