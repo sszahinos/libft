@@ -6,7 +6,7 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 19:29:48 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/19 10:35:31 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/24 10:39:48 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,5 @@ t_list	*ft_lstnew(void *content)
 		return (0);
 	lst->content = content;
 	lst->next = 0;
+	return (lst);
 }

@@ -6,7 +6,7 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 17:52:10 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/21 11:37:35 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/24 10:36:05 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		start_end[1]++;
 		i--;
 	}
-	if (start_end[0] == len &&  start_end[1] == len)
+	if (start_end[0] == len && start_end[1] == len)
 		new_str = malloc(sizeof(char));
 	else
 		new_str = malloc(sizeof(char) * (len - (start_end[0] + start_end[1]) + 1));

@@ -6,7 +6,7 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 21:53:46 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/21 09:48:33 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/24 10:26:24 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static int	get_len(long long int n)
 {
 	int	i;
 	int	sign;
-	
+
 	if (n == 2147483648)
 		return (11);
 	i = 0;
