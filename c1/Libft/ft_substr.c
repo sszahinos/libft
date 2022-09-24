@@ -6,7 +6,7 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 17:52:34 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/20 17:23:24 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/24 11:36:18 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,15 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 	char	*substr;
 
-	if (start >= (unsigned int)ft_strlen(s))
-		return ("");
+	if ((long long int)start > 2147483647LL)
+	{
+		start = ft_strlen(s);
+		len = 0;
+	}
+	else if (start >= (unsigned int)ft_strlen(s))
+		len = 0;
+	else if (ft_strlen(s) < len)
+		len = ft_strlen(s);
 	substr = malloc(sizeof(char) * (len + 1));
 	if (!substr)
 		return (0);
