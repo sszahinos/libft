@@ -6,7 +6,7 @@
 #    By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/16 10:05:08 by sersanch          #+#    #+#              #
-#    Updated: 2022/09/27 12:37:46 by sersanch         ###   ########.fr        #
+#    Updated: 2022/09/27 15:43:09 by sersanch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,7 @@ SRC_DIR = src
 OBJ_DIR = obj
 BONUS_DIR = bonus
 
-CC = cc
-FLAGS = -Wall -Wextra -Werror -MMD
+CFLAGS = -Wall -Wextra -Werror
 NORMINETTE = norminette -R CheckForbiddenSourceHeader
 RM = rm -f
 AR = ar -rcs
@@ -87,15 +86,13 @@ BONUS_OBJS = $(BONUS_FILES:.c=.o)
 
 ##### DEPENDENCIES #####
 SRC_DEPS = $(SRC_FILES:c=.d)
+BONUS_DEPS = $(BONUS_FILES:c=.o)
 
 ##### RULES #####
 all: $(NAME)
 
-#$(SRC_DIR)/$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-#	@$(CC) $(CFLAGS) -c $< -o $@
-#	@echo "$(CYAN)$< $(GREEN)✓$(RESET)"
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -MMD -c $< -o $@
 	@echo "$(CYAN)$< $(GREEN)✓$(RESET)"
 
 $(NAME): $(SRC_OBJS) Makefile $(HEADER)
@@ -103,13 +100,13 @@ $(NAME): $(SRC_OBJS) Makefile $(HEADER)
 	@echo "$(BOLD)$(LMAGENTA)SRC $(GREEN)compilated succesfully!$(RESET)"
 
 bonus: $(SRC_OBJS) $(BONUS_OBJS) Makefile $(HEADER)
-	$(AR) $(NAME) $(SRC_OBJS) $(BONUS_OBJS)
+	@$(AR) $(NAME) $(SRC_OBJS) $(BONUS_OBJS)
 	@echo "$(BOLD)$(LMAGENTA)BONUS $(GREEN)compilated succesfully!$(RESET)"
 
 clean:
-	@$(RM) $(SRC_OBJS)
-	@$(RM) $(BONUS_OBJS)
-	@echo "$(YELLOW)Objects deleted.$(RESET)"
+	@$(RM) *.o 
+	@$(RM) *.d
+	@echo "$(YELLOW)Objects and dependencies deleted.$(RESET)"
 
 fclean: clean
 	@$(RM) $(NAME) bonus.a
@@ -123,8 +120,10 @@ push:
 	git add ft_*.c && git commit -m "Functions updated" && git push
 
 folders:
-	@$(MKDIR) ./$(SRC_DIR)/$(OBJ_DIR)
-	@$(MV) *.c ./$(SRC_DIR)
+	@$(MKDIR) ./$(OBJ_DIR)
 	@$(MV) *.o ./$(SRC_DIR)/$(OBJ_DIR)
 
-.PHONY: all, clean, fclean, re, norm, bonus, folders
+-include $(SRC_DEPS)
+-include $(BONUS_DEPS)
+
+.PHONY: all clean fclean re norm bonus folders
