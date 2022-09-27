@@ -6,7 +6,7 @@
 #    By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/16 10:05:08 by sersanch          #+#    #+#              #
-#    Updated: 2022/09/24 14:27:00 by sersanch         ###   ########.fr        #
+#    Updated: 2022/09/27 12:25:51 by sersanch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -108,6 +108,7 @@ bonus: $(SRC_OBJS) $(BONUS_OBJS) Makefile $(HEADER)
 
 clean:
 	@$(RM) $(SRC_OBJS)
+	@$(RM) $(BONUS_OBJS)
 	@echo "$(YELLOW)Objects deleted.$(RESET)"
 
 fclean: clean
