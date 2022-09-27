@@ -6,7 +6,7 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 09:47:34 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/24 16:28:54 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/27 09:09:04 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static char	*get_word(char const *str, int start, int end)
 		word[i] = str[start + i];
 		i++;
 	}
-	word[i] = '\0';
+	word[i] = NULL;
 	return (word);
 }
 
@@ -74,7 +74,7 @@ char	**ft_split(char const *s, char c)
 	char	**words;
 
 	words = malloc(sizeof(char *) * (count_words(s, (unsigned char)c) + 1));
-	if (!words)
+	if (!s || !words)
 		return (0);
 	i = 0;
 	j = 0;
@@ -103,8 +103,13 @@ char	**ft_split(char const *s, char c)
 	if (normal_found == 1)
 	{
 		words[j] = get_word(s, start, i);
+		if (!words[j])
+		{
+			clear_words(words);
+			return (0);
+		}
 		j++;
 	}
-	words[j] = 0;
+	words[j] = NULL;
 	return (words);
 }
