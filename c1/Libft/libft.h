@@ -6,7 +6,7 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/14 15:11:37 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/24 10:38:47 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/27 14:31:35 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,14 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }	t_list;
+
+typedef struct split_vars
+{
+	int	i;
+	int	j;
+	int	start;
+	int	nrm_fnd;
+}	t_split_vars;
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
