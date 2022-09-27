@@ -6,7 +6,7 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 09:47:34 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/27 09:09:04 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/27 10:26:54 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,11 @@ static char	*get_word(char const *str, int start, int end)
 		word[i] = str[start + i];
 		i++;
 	}
-	word[i] = NULL;
+	word[i] = (char)NULL;
 	return (word);
 }
 
-void	clear_words(char **words)
+static void	clear_words(char **words)
 {
 	int	i;
 
