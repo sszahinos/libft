@@ -6,7 +6,7 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 19:24:23 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/20 15:00:21 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/27 12:29:10 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static int	ft_pow(int base, int power)
 	return (result);
 }
 
-int	print_max(int n, int fd)
+static int	print_max(int n, int fd)
 {
 	if (n == -2147483648)
 	{
