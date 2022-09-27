@@ -6,7 +6,7 @@
 /*   By: sersanch <sersanch@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 10:27:28 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/24 15:34:40 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/27 15:22:50 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*aux;
-	t_list	*aux_next;
 
 	aux = *lst;
 	while (aux)
