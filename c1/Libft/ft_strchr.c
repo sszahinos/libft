@@ -6,9 +6,11 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 12:52:28 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/24 11:08:26 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/27 16:43:38 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {

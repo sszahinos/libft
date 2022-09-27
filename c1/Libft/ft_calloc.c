@@ -6,11 +6,11 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/15 13:51:36 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/20 11:34:17 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/27 16:44:08 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_calloc(size_t count, size_t size)
 {
