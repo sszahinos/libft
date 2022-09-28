@@ -6,7 +6,7 @@
 #    By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/16 10:05:08 by sersanch          #+#    #+#              #
-#    Updated: 2022/09/27 16:55:52 by sersanch         ###   ########.fr        #
+#    Updated: 2022/09/28 11:19:12 by sersanch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,9 @@ NAME	= libft.a
 BNUS	= .bonus
 
 HEADER	= libft.h
-INCLUDE	= -I ./
-SRC_DIR	= src/
-OBJ_DIR	= obj/
+INCLUDE	= -I 
+#SRC_DIR	= src/
+#OBJ_DIR	= obj/
 
 CFLAGS	= -Wall -Wextra -Werror
 NORM	= norminette -R CheckForbiddenSourceHeader
@@ -94,7 +94,7 @@ BONUS_DEPS = $(BONUS_FILES:.c=.d)
 all: $(NAME)
 
 %.o: %.c Makefile
-	@$(CC) $(CFLAGS) -MMD $(INCLUDE) -c $< -o $@
+	@$(CC) $(CFLAGS) -MMD $(INCLUDE) $(HEADER) -c $< -o $@
 	@echo "$(CYAN)$< $(GREEN)✓$(RESET)"
 
 $(NAME): $(SRC_OBJS)

@@ -1,5 +1,7 @@
 *.o
+*.d
 *.swp
-#test_*
+test/*
+a.out
 .DS_Store
 .vscode*
