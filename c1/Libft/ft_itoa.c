@@ -6,12 +6,12 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 21:53:46 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/27 16:44:02 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/27 17:25:45 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+//#include <stdio.h>
 static int	get_len(long long int n)
 {
 	int	i;
@@ -80,3 +80,9 @@ char	*ft_itoa(int n)
 	}
 	return (num);
 }
+/*
+int main(void)
+{
+	printf("%s", ft_itoa(-2147483648));
+	return (0);
+}*/

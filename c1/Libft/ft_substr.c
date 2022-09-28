@@ -6,7 +6,7 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 17:52:34 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/27 16:43:28 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/28 11:54:24 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (!substr)
 		return (0);
 	i = 0;
-	while (s[i + start] && i < len)
+	while (i < len)
 	{
 		substr[i] = s[i + start];
 		i++;
