@@ -6,7 +6,7 @@
 /*   By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 21:53:46 by sersanch          #+#    #+#             */
-/*   Updated: 2022/09/27 17:25:45 by sersanch         ###   ########.fr       */
+/*   Updated: 2022/09/28 11:58:21 by sersanch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ static char	*get_min(char *num)
 		num[i] = min[i];
 		i++;
 	}
-	num[i] = '\0';
 	return (num);
 }
 
