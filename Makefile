@@ -6,7 +6,7 @@
 #    By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/16 10:05:08 by sersanch          #+#    #+#              #
-#    Updated: 2022/09/28 11:19:12 by sersanch         ###   ########.fr        #
+#    Updated: 2022/09/30 12:03:15 by sersanch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,12 +27,12 @@ MKDIR	= mkdir -p
 MV		= mv -f
 
 #### FORMAT #####
-RESET		:= \e[0m
-BOLD		:= \e[1m
-GREEN		:= \e[32m
-YELLOW		:= \e[33m
-CYAN		:= \e[36m
-LMAGENTA	:= \e[95m
+RESET		:= \033[0m
+BOLD		:= \033[1m
+GREEN		:= \033[32m
+YELLOW		:= \033[33m
+CYAN		:= \033[36m
+LMAGENTA	:= \033[95m
 
 
 ##### FILES #####

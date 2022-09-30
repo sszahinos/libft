@@ -1,2 +1,7 @@
-c1/Libft/test/a.out
-c1/Libft/libft.a
+*.o
+*.d
+*.swp
+test/*
+a.out
+.DS_Store
+.vscode*

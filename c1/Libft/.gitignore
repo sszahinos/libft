@@ -1,7 +1,0 @@
-*.o
-*.d
-*.swp
-test/*
-a.out
-.DS_Store
-.vscode*
