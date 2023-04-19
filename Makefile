@@ -6,25 +6,9 @@
 #    By: sersanch <sersanch@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/16 10:05:08 by sersanch          #+#    #+#              #
-#    Updated: 2022/09/30 12:03:15 by sersanch         ###   ########.fr        #
+#    Updated: 2023/04/19 11:14:54 by sersanch         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-##### VARIABLES #####
-NAME	= libft.a
-BNUS	= .bonus
-
-HEADER	= libft.h
-INCLUDE	= -I 
-#SRC_DIR	= src/
-#OBJ_DIR	= obj/
-
-CFLAGS	= -Wall -Wextra -Werror
-NORM	= norminette -R CheckForbiddenSourceHeader
-RM		= rm -f
-AR		= ar -rcs
-MKDIR	= mkdir -p
-MV		= mv -f
 
 #### FORMAT #####
 RESET		:= \033[0m
@@ -34,6 +18,22 @@ YELLOW		:= \033[33m
 CYAN		:= \033[36m
 LMAGENTA	:= \033[95m
 
+##### VARIABLES #####
+NAME	= libft.a
+BNUS	= .bonus
+
+HEADER	= libft.h
+INCLUDE	= -I
+INC_DIR = include
+#SRC_DIR	= src/
+#OBJ_DIR	= obj/
+
+CFLAGS	= -Wall -Wextra -Werror
+NORM	= norminette -R CheckForbiddenSourceHeader
+RM		= rm -f
+AR		= ar -rcs
+MKDIR	= mkdir -p
+MV		= mv -f
 
 ##### FILES #####
 SRC_FILES =	ft_isalpha.c \
@@ -94,7 +94,7 @@ BONUS_DEPS = $(BONUS_FILES:.c=.d)
 all: $(NAME)
 
 %.o: %.c Makefile
-	@$(CC) $(CFLAGS) -MMD $(INCLUDE) $(HEADER) -c $< -o $@
+	@$(CC) $(CFLAGS) -MMD $(INCLUDE)$(INC_DIR) -c $< -o $@
 	@echo "$(CYAN)$< $(GREEN)✓$(RESET)"
 
 $(NAME): $(SRC_OBJS)
